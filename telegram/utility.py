@@ -33,5 +33,8 @@ def find_message_by_id(messages, id):
 def convert_to_emoji(string):
     message = ''
     for symbol in string:
-        message += '[❤️](emoji/' + str(letters_map[str.upper(symbol)]) + ')'
+        if symbol.upper() in letters_map:
+            message += '[❤️](emoji/' + str(letters_map[str.upper(symbol)]) + ')'
+        else:
+            message += symbol
     return message
