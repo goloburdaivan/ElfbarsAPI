@@ -1,16 +1,22 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {Body, Controller, Get, Param, Post} from '@nestjs/common';
 import { TastesService } from '../Services/TastesService';
 import { TasteDTO } from '../DTO/TasteDTO';
 
-@Controller('add')
+@Controller('tastes')
 export class TastesController {
-  constructor(private editService: TastesService) {}
+  constructor(private tastesService: TastesService) {}
   @Get()
-  getAll(): string {
-    return 'this is edit page';
+  async getAll() {
+    return this.tastesService.getAllTastes();
   }
+
+  @Get(':id')
+  async getTasteById(@Param('id') id: number) {
+      return this.tastesService.getTasteById(id);
+  }
+
   @Post()
   async editElfbar(@Body() taste: TasteDTO) {
-    await this.editService.appendTaste(taste);
+    await this.tastesService.appendTaste(taste);
   }
 }
