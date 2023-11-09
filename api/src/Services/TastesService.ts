@@ -13,4 +13,11 @@ export class TastesService {
     spawn('python', ['../telegram/main.py']);
     return await this.tasteRepo.save(record);
   }
+
+  async getTasteById(id: number) {
+    return await this.tasteRepo.findOneBy({ id });
+  }
+  async getAllTastes() {
+    return await this.tasteRepo.find();
+  }
 }

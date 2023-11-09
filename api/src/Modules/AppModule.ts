@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TastesModule } from './TastesModule';
 import { Tastes } from '../Entities/Tastes';
+import {Categories} from "../Entities/Categories";
+import {CategoriesModule} from "./CategoriesModule";
 
 @Module({
   imports: [
@@ -12,10 +14,11 @@ import { Tastes } from '../Entities/Tastes';
       username: 'root',
       password: 'root123123',
       database: 'elfbar_site',
-      entities: [Tastes],
+      entities: [Tastes, Categories],
       synchronize: false,
     }),
     TastesModule,
+    CategoriesModule
   ],
   controllers: [],
   providers: [],
