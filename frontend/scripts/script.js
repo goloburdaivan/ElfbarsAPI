@@ -1,4 +1,3 @@
-// JavaScript-код для работы с категориями
 let categories = [];
 
 function updateCategoryTable() {
@@ -35,11 +34,9 @@ function deleteCategory(categoryName) {
     categories = categories.filter(category => category !== categoryName);
     updateCategoryTable();
 
-    // Обновляем Local Storage после удаления
     localStorage.setItem("categories", JSON.stringify(categories));
 }
 
-// Проверка наличия данных в Local Storage при загрузке страницы
 if (localStorage.getItem("categories")) {
     categories = JSON.parse(localStorage.getItem("categories"));
     updateCategoryTable();
@@ -53,7 +50,6 @@ function addCategory() {
         updateCategoryTable();
         document.getElementById("categoryName").value = "";
 
-        // Сохранение данных в Local Storage
         localStorage.setItem("categories", JSON.stringify(categories));
     }
 }
@@ -62,5 +58,4 @@ function redirectTo(url) {
     window.location.href = url;
 }
 
-// Инициализация таблицы при загрузке страницы
 updateCategoryTable();
