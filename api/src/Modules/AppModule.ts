@@ -4,6 +4,7 @@ import { TastesModule } from './TastesModule';
 import { Tastes } from '../Entities/Tastes';
 import {Categories} from "../Entities/Categories";
 import {CategoriesModule} from "./CategoriesModule";
+import {ElfbarModule} from "./ElfbarModule";
 
 @Module({
   imports: [
@@ -14,11 +15,12 @@ import {CategoriesModule} from "./CategoriesModule";
       username: 'root',
       password: 'root123123',
       database: 'elfbar_site',
-      entities: [Tastes, Categories],
+      autoLoadEntities: true,
       synchronize: false,
     }),
     TastesModule,
-    CategoriesModule
+    CategoriesModule,
+    ElfbarModule
   ],
   controllers: [],
   providers: [],

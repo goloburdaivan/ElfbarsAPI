@@ -1,4 +1,5 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {Elfbars} from "./Elfbars";
 
 @Entity()
 export class Categories {
@@ -13,4 +14,7 @@ export class Categories {
 
     @Column()
     title: string;
+
+    @OneToMany(() => Elfbars, elfbars => elfbars.category)
+    elfbars: Elfbars[];
 }

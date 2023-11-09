@@ -1,5 +1,9 @@
+import {Categories} from "../Entities/Categories";
+import {Tastes} from "../Entities/Tastes";
+
 export class ElfbarDTO {
-  message_id: number;
-  telegram_id: number;
-  taste: string;
+  id?: number;
+  price: number;
+  category: Categories;
+  taste: Tastes;
 }
