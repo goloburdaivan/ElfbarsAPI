@@ -38,3 +38,11 @@ def convert_to_emoji(string):
         else:
             message += symbol
     return message
+
+
+def to_string(start_string):
+    string = ''
+    for line in start_string.split('\\n'):
+        if line != '':
+            string += line + '\n'
+    return string
