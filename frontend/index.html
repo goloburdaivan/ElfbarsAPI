@@ -13,8 +13,8 @@
 <body>
 <div class="table-wrapper">
     <div class="navbar">
-        <button class="redact-taste" onclick="redirectTo('your_taste_url')">Redact Tastes</button>
-        <button class="redact-category" onclick="redirectTo('http://roz.kpi.ua/')">Redact Categories</a></button>
+        <a href="your_taste_url" class="redact-taste">Redact Tastes</a>
+        <a href="http://roz.kpi.ua/" class="redact-category">Redact Categories</a>
     </div>
     <table class="table">
         <thead>
@@ -73,6 +73,7 @@
             <td>5461215</td>
             <td class="action"><a href="https://t.me/rzhadkpi">✎</a></td>
         </tr>
+        
         <tr>
             <td>Category 6</td>
             <td>Taste 6</td>
@@ -94,12 +95,6 @@
         <tbody>
     </table>
 </div>
-
-<script>
-    function redirectTo(url) {
-        window.location.href = url;
-    }
-</script>
 
 </body>
 </html>
