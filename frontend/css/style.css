@@ -1,0 +1,75 @@
+body {
+    background: #F6F6FA;
+    padding: 0px 20px 20px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+form {
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.th_2 {
+    width: 10%;
+}
+
+.navbar {
+    margin-top: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button_main, .button_taste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: #4CAF50;
+    color: black;
+    border-radius: 1px solid black;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    /* border: none; */
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #357a38;
+}
