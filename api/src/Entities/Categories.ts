@@ -14,7 +14,6 @@ export class Categories {
 
     @Column()
     title: string;
-
     @OneToMany(() => Elfbars, elfbars => elfbars.category)
     elfbars: Elfbars[];
 }
