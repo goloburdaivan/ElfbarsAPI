@@ -10,6 +10,9 @@ export class Elfbars {
     @Column()
     price: number;
 
+    @Column()
+    count: number;
+
     @ManyToOne(() => Categories)
     @JoinColumn({name: 'category_id'})
     category: Categories;
