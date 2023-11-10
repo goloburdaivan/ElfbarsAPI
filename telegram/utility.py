@@ -40,6 +40,16 @@ def convert_to_emoji(string):
     return message
 
 
+def convert_to_link(string, link):
+    return '[' + string + '](' + link + ')'
+
+
+def add_links(links, message):
+    for string in links.keys():
+        message += '\n\n👉🏻' + convert_to_link(string, links[string])
+    return message
+
+
 def to_string(start_string):
     string = ''
     for line in start_string.split('\\n'):
