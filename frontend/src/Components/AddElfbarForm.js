@@ -53,7 +53,8 @@ const AddElfbarForm = ({ onAddElfbar }) => {
     }
 
     return (
-        <div className="form">
+        <div>
+            <h1>Добавить Elfbar</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="price">Цена</label>

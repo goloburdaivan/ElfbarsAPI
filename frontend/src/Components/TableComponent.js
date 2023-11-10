@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Styles from '../Styles/Styles.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
@@ -8,7 +8,7 @@ const TableComponent = ( { elfbars, deleteIcon } ) => {
         event.preventDefault();
         const id = event.target.href.split('/').pop();
         try {
-            const response = await axios.delete(`http://localhost:3000/elfbars/${id}`);
+            await axios.delete(`http://localhost:3000/elfbars/${id}`);
             window.location = '/';
         } catch (error) {
             alert(`Возникла ошибка при удалении записи!\n${error}`);
