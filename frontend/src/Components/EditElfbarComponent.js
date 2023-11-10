@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 import TableComponent from "./TableComponent";
 import EditElfbarForm from "./EditElfbarForm";
+import Navbar from "./Navbar";
 const EditElfbarComponent = () => {
     const { id } = useParams();
     const url = `http://localhost:3000/elfbars/${id}`;
@@ -41,6 +42,8 @@ const EditElfbarComponent = () => {
 
     return (
         <div>
+            <Navbar />
+            <h1>Редактировать Elfbar</h1>
             <TableComponent deleteIcon={true} elfbars={[elfbar]} />
             <EditElfbarForm _elfbar={elfbar} onEditElfbar={handleEdit} />
         </div>

@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import Navbar from "./Navbar";
 import TableComponent from "./TableComponent";
 import axios from "axios";
@@ -30,8 +30,8 @@ const IndexComponent = () => {
     return (
         <div>
             <Navbar />
-            <TableComponent deleteIcon={false} elfbars={elfbars} />
             <AddElfbarForm onAddElfbar={handleAddition} />
+            <TableComponent deleteIcon={false} elfbars={elfbars} />
         </div>
     )
 };
