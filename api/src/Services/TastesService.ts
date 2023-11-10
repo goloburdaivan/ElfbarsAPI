@@ -15,11 +15,17 @@ export class TastesService {
     //spawn('python', ['../telegram/main.py']);
     return await this.tasteRepo.save(record);
   }
-
   async getTasteById(id: number) {
     return await this.tasteRepo.findOneBy({ id });
   }
   async getAllTastes() {
     return await this.tasteRepo.find();
+  }
+  async editTasteById(id: number, taste: Taste) {
+    await this.tasteRepo.update(id, taste);
+    return await this.getTasteById(id);
+  }
+  async deleteTasteById(id: number) {
+    return await this.tasteRepo.delete({ id });
   }
 }
