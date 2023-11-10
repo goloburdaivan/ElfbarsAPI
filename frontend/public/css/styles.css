@@ -99,3 +99,17 @@ h2{
 .table td.action a:hover {
     text-decoration: underline;
 }
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
