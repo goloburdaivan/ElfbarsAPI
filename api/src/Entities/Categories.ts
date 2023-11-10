@@ -10,7 +10,7 @@ export class Categories {
     message_id: number;
 
     @Column()
-    tg_chat_id: number;
+    tg_chat_id: string;
 
     @Column()
     title: string;

@@ -12,7 +12,6 @@ export class TastesService {
   ) {}
   async appendTaste(taste: Taste) {
     const record = this.tasteRepo.create(taste);
-    //spawn('python', ['../telegram/main.py']);
     return await this.tasteRepo.save(record);
   }
   async getTasteById(id: number) {
@@ -26,6 +25,7 @@ export class TastesService {
     return await this.getTasteById(id);
   }
   async deleteTasteById(id: number) {
-    return await this.tasteRepo.delete({ id });
+    await this.tasteRepo.delete({ id });
+    return this.getAllTastes();
   }
 }

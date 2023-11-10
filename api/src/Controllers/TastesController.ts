@@ -23,8 +23,8 @@ export class TastesController {
     return this.tastesService.getTasteById(id);
   }
   @Post()
-  async editElfbar(@Body() taste: TasteDTO) {
-    await this.tastesService.appendTaste(taste);
+  async appendTaste(@Body() taste: TasteDTO) {
+    return await this.tastesService.appendTaste(taste);
   }
 
   @Put(':id')
