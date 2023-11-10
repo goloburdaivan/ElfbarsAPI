@@ -23,9 +23,9 @@ const AddElfbarForm = ({ onAddElfbar }) => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/categories");
+                const categoriesResponse = (await axios.get("http://localhost:3000/categories")).data;
                 const tastesResponse = (await axios.get("http://localhost:3000/tastes")).data;
-                setCategories(response.data);
+                setCategories(categoriesResponse);
                 setTastes(tastesResponse);
             } catch (error) {
                 console.log(error.message);
@@ -92,7 +92,8 @@ const AddElfbarForm = ({ onAddElfbar }) => {
                         }))}
                     </select>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <br />
+                <button type="submit" className="btn btn-success">Добавить</button>
             </form>
         </div>
     );

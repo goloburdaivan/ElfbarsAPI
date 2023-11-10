@@ -30,7 +30,7 @@ const IndexComponent = () => {
     return (
         <div>
             <Navbar />
-            <TableComponent elfbars={elfbars} />
+            <TableComponent deleteIcon={false} elfbars={elfbars} />
             <AddElfbarForm onAddElfbar={handleAddition} />
         </div>
     )
