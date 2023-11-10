@@ -1,28 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import IndexComponent from "./Components/IndexComponent";
+import EditElfbarComponent from "./Components/EditElfbarComponent";
 
 function App() {
 
-  const [elfbars, setElfbar] = useState([]);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Let`s play football
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/goloburdaivan/rzhad-elfbar"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          World cup
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<IndexComponent />}>
+          </Route>
+          <Route path="/edit-elfbar/:id" element={<EditElfbarComponent />}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
