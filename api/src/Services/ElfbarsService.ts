@@ -33,7 +33,7 @@ export class ElfbarsService {
     ];
     let tastes = '';
     elfbars.forEach((el) => {
-      tastes += `${el.taste.title}\n`;
+      if (el.count > 0) tastes += `${el.taste.title}\n`;
     });
     args.push(tastes);
     args.push(new_elfbar.price.toString());
@@ -67,11 +67,27 @@ export class ElfbarsService {
   }
 
   async deleteElfbarById(id: number) {
-    return await this.elfbarRepo.delete({ id });
+    const deleted_elfbar = this.elfbarRepo.getAllElfbarById(id);
+    const elfbars = await this.getElfbarsByCategory(deleted_elfbar.category.id);
+    elfbars.splice(elfbars.indexOf(deleted_elfbar), 1);
+    const args = [
+      deleted_elfbar.category.tg_chat_id,
+      deleted_elfbar.category.message_id.toString(),
+      deleted_elfbar.category.title,
+    ];
+    let tastes = '';
+    elfbars.forEach((el) => {
+      if (el.count > 0) tastes += `${el.taste.title}\n`;
+    });
+    args.push(tastes);
+    args.push(deleted_elfbar.price.toString());
+    spawn('python', ['../telegram/main.py', ...args]);
+    await this.elfbarRepo.delete({ id });
   }
 
   async editElfbarById(id: number, elfbar: Elfbar) {
-    await this.elfbarRepo.update(id, elfbar);
+    this.deleteElfbarById(id);
+    this.addElfbar(elfbar);
     return await this.getAllElfbarById(id);
   }
 }
