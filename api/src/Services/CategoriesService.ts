@@ -28,6 +28,7 @@ export class CategoriesService {
   }
 
   async deleteCategoryById(id: number) {
-    return await this.categoriesRepo.delete({ id });
+    await this.categoriesRepo.delete({ id });
+    return this.getAllCategories();
   }
 }
