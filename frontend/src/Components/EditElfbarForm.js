@@ -42,10 +42,8 @@ const EditElfbarForm = ({ _elfbar, onEditElfbar }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(elfbar);
-
         try {
-            const response = await axios.post('http://localhost:3000/elfbars', elfbar);
+            const response = await axios.put(`http://localhost:3000/elfbars/${_elfbar.id}`, elfbar);
             onEditElfbar(response.data);
         } catch (error) {
             alert(`Неверные данные в форме изминения эльфбара! Заполните ее корректно\n${error.message}`);
