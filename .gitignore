@@ -1,3 +1,4 @@
+credentials.py
 # compiled output
 api/node_modules
 *.pyc

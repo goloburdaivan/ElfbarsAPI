@@ -15,8 +15,10 @@ NAME_OF_ELFBAR = sys.argv[3]
 LIST_OF_ELFBARS = to_string(sys.argv[4])
 PRICE = int(sys.argv[5])
 
-MESSAGE = convert_to_emoji(NAME_OF_ELFBAR) + '\n—————————————————\n' + LIST_OF_ELFBARS + '\n' + convert_to_emoji(str(PRICE) + " EUR\n\n---------")
-MESSAGE = add_links(links, MESSAGE)
+MESSAGE = convert_to_emoji(NAME_OF_ELFBAR) + '\n—————————————————\n' + LIST_OF_ELFBARS + '\n' + convert_to_emoji(str(PRICE) + " EUR\n\n✈ ")
+LINK1 = convert_to_link('НАВИГАЦИЯ', links['НАВИГАЦИЯ'])
+LINK2 = convert_to_link('ЗАКАЗАТЬ', links['ЗАКАЗАТЬ'])
+MESSAGE += LINK1 + convert_to_emoji('   ✓ ') + LINK2
 
 with TelegramClient(StringSession(SESSION), API_ID, API_HASH) as client:
     client.parse_mode = CustomMarkdown()
