@@ -29,6 +29,9 @@ def find_message_by_id(messages, id):
     message = list(filter(lambda m: m.id == id, messages))
     return message[0]
 
+def get_documnent_id(message):
+    entities = message.entities
+    return entities[0]
 
 def convert_to_emoji(string):
     message = ''
